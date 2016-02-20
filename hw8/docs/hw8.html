@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>CSCI 2600 Homework 8: Refactoring</title>
+   <style type="text/css">
+     #compass-rose {
+       text-align:center;
+       font-size:0.9em;
+     }
+
+     #compass-rose img {
+       border: 1px solid black;
+     }
+   </style>
+</head>
+<body>
+<div id="header">
+<div class="course">CSCI 2600 Principles of Software</div>
+<h1><!-- omit from toc -->
+<span class="head">Homework 8:</span>
+<span class="title">Refactoring</span>
+</h1>
+<h2><!-- omit from toc -->
+<span class="head">Due:</span>
+<span class="due">Wendesday, November 26 <b>@5:59pm</b></span>
+</h2>
+</div>
+
+<h3>Homework 8</h3> <!-- omit from toc -->
+
+
+<h2 id="Introduction">Introduction</h2>
+
+<p>
+In this assignment, you will practice refactoring. In the first part of the assignment
+you are given working but quite ugly and "smelly" code. Your task is to refactor and augment
+the code. In the second part you will refactor your old homework code. 
+</p>
+
+
+<h2 id="Problem1">Problem 1: Willy Wazoo's Boolean Expressions [70 points]</h2>
+<p>
+  Willy Wazoo has written a program that parses, evaluates and prints boolean expressions,
+  and his code works! The parser takes a string expression in preorder form and constructs
+  a boolean expression tree (the one we did in class). In preorder, the operator (AND, OR) 
+  appears before the two operands of the expression; e.g., <strong>x AND y</strong> is <strong>AND x y</strong> 
+  in preorder, and <strong>x AND y OR z</strong> is <strong>OR AND x y z</strong> in preorder. 
+  We restrict AND and OR to two operands. The example from lecture, <strong>(x OR true) AND y</strong> translates to 
+  <strong>AND OR x true y</strong> in preorder. 
+  Note that in preorder one need not worry about order of operations. 
+  The reason why Willy chose preorder, is that it is much easier to parse an 
+  expression if it is in preorder form, than if it is in the "normal" inorder form. 
+</p>
+
+</p>
+  We have added Willy's code in <tt>src/hw8/</tt> and his test cases in <tt>src/hw8/test</tt>.
+  Willy's code parses, evaluates in a context of variable-to-boolean mappings, 
+  and prints the expressions. It prints the expressions in preorder and in inorder. 
+  Printing in inorder is a little bit more involved because one must take into account
+  order of operations and insert parentheses when needed. In boolean arithmetic 
+  NOT has highest precedence, followed by AND, followed by OR. 
+  If the preorder expression is <strong>AND OR x y z</strong>, this should be printed as 
+  <strong>(x OR y) AND z</strong> in inorder, to account for the fact that operand <strong>y</strong>
+  associates with the OR. <strong>x OR y AND z</strong> is equivalent
+  <strong>to x OR (y AND z)</strong>, <strong>OR x AND y z</strong> in preorder. 
+</p>
+
+<p>
+  Willy's code works fine, except that he forgot to implement the NOT expression! He tried to add 
+  a NOT, but quickly became frustrated beause it required too many changes throughout
+  the code.  
+</p>
+
+
+<p>
+Your task is to fix Willy's code. You must identify all code smells, refactor
+and implement NOT and still pass all Willy's tests.
+List all code smells you identify in <tt>hw8/answers/problem1.txt</tt>.
+List all refactorings you use in <tt>hw8/answers/problem1.txt</tt> as well.
+Ideally, your refactored code will include a Boolean expression hierarchy, 
+as shown in the figure below, and will make use of the Interpreter or Visitor
+design patterns.
+</p>
+
+<div id="Graph-Images">
+  <div id="Digraph">
+      <img src="ClassDiagram.png" alt="A simple directed graph">
+      <div style="font-size:0.9em;">Figure 1: A Boolean expression hierarchy using the Composite pattern.</div>
+  </div>
+<!--
+  <div id="Multigraph">
+      <img src="multigraph.png" alt="A multigraph">
+      <div style="font-size:0.9em;">Figure 2: A directed multigraph.</div>
+  </div>
+  <div id="Labeled-graph">
+      <img src="labeled-graph.png" alt="A labeled graph">
+      <div style="font-size:0.9em;">Figure 2: A directed labeled multigraph.</div>
+  </div>
+-->
+  <div class="spacer"></div>
+</div>
+
+
+
+<h2 id="Problem2">Problem 2: Resubmit [28 points]</h2>
+  
+<p>
+Refactor and resubmit HW4 and HW5. You should elminate (at least) 
+the large method, large class and duplicate code smells (if you haven't done so already). 
+Briefly describe the changes in <tt>hw8/answers/problem2.txt</tt>.
+</p>
+
+<p>
+If your HW4 and/or HW5 received low grades but you managed to make things work this time, 
+you will receive 10 points towards HW4 and/or HW5.
+</p>
+
+</p>
+
+
+<h2 id="reflection">Reflection [1 point]</h2>
+
+<p>Please answer the following questions in a file named <tt>reflection.txt</tt>
+in your
+<tt>answers/</tt> directory.  Answer briefly, but in enough detail to
+help you improve your own practice via introspection and to enable the
+course staff to improve Principles of Software in the future.</p>
+<ol>
+  <li>In retrospect, what could you have done better to reduce the time you
+  spent solving this assignment?</li>
+  <li>What could the CSCI 2600 stuff have done better to improve your learning
+  experience in this assignment?</li>
+  <li>What do you know now that you wish you had known before beginning the
+  assignment?</li>
+</ol>
+
+
+<h2 id="collaboration">Collaboration [1 point]</h2>
+<p>Please answer the following questions in a file
+named <tt>collaboration.txt</tt> in your
+<tt>answers/</tt> directory.</p>
+<p>
+The standard academic integrity policy applies to this assignment.
+</p>
+<p>
+State whether or not you collaborated with other students.
+If you did collaborate with other students, state their names and a brief
+description of how you collaborated.
+</p>
+
+<h2 id="Hints">Hints</h2>
+
+<h3 id="other-hints">Refactoring</h3>
+
+<p>
+Remember, the key to refactoring is, make a small change then immediately 
+run the tests. That way, if you break something you'll know exactly where 
+to look.  
+</p>
+
+
+<h2 id="Turnin">What to Turn In</h2>
+<p>You should add and commit the following files to SVN:</p>
+
+<ul>
+    <li><tt>hw8/*.java</tt> <em>[The refactored Boolean expression code. Add as many files as you need.]</em></li> 
+    <li><tt>hw8/test/*Test.java</tt> <em>[JUnit test classes you edit or create]</em></li>
+    <li><tt>hw8/answers/problem1.txt</tt></li>
+    <li><tt>hw8/answers/problem2.txt</tt></li>
+    <li><tt>hw8/answers/reflection.txt</tt></li>
+    <li><tt>hw8/answers/collaboration.txt</tt></li>
+</ul>
+
+<p>Additionally, commit changes to <tt>hw4</tt> and <tt>hw5</tt>.</p>
+
+<h2 id="errata">Errata</h2>
+
+<p>None yet.</p>
+
+<div id="footer">
+<p>Willy Wazoo's character was borrowed from Mike Ernst.
+</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
+<!--  LocalWords:  img 1px 11pm H7 Returnin ADT MVC hw6 dat tsv jpg java 1px
+ -->
+<!--  LocalWords:  MarvelParser shortName longName x1 y1 x2 y2 distance12 11pm
+ -->
+<!--  LocalWords:  x3 y3 distance13 txt hw7 oversized println TODO xxx yyy
+ -->
+<!--  LocalWords:  prepended atan2 stdin stdout returnin returnin331 hw4
+ -->
+<!--  LocalWords:  hw5 attu 1px 11pm cse331 src HW7TestDriver runTests IMs
+ -->
+<!--  LocalWords:  ScriptFileTests ImplementationTests getAbsoluteFilename
+ -->
+<!--  LocalWords:  HW5TestDriver HW6TestDriver xml 1px ij nextLine
+ -->

@@ -1,0 +1,38 @@
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-11008
+Cmd: getPlatforms
+Cmd: preprocess
+  insize=818 outsize=818 ok=1
+Cmd: preprocess
+  insize=472 outsize=472 ok=1
+Cmd: preprocess
+  insize=835 outsize=835 ok=1
+Cmd: preprocess
+  insize=730 outsize=730 ok=1
+Cmd: preprocess
+  insize=608 outsize=608 ok=1
+Cmd: preprocess
+  insize=1355 outsize=1355 ok=1
+Cmd: preprocess
+  insize=316 outsize=316 ok=1
+Cmd: preprocess
+  insize=634 outsize=634 ok=1
+Cmd: preprocess
+  insize=963 outsize=963 ok=1
+Cmd: preprocess
+  insize=2965 outsize=1659 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1612 outsize=2005 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1612 outsize=2070 kw= ok=1
+Cmd: preprocess
+  insize=3679 outsize=1777 ok=1
+Cmd: compileSnippet
+  error: 2 plat 4 at (100): 'vert': output parameter 'o' not completely initialized
+  error: 1 plat 4 at (123): 'texCUBE': implicit truncation of vector type
+  error: 1 plat 4 at (136): implicit truncation of vector type
+  error: 1 plat 4 at (137): implicit truncation of vector type
+  error: 1 plat 4 at (138): implicit truncation of vector type
+  error: 1 plat 4 at (139): implicit truncation of vector type
+  error: 1 plat 4 at (140): implicit truncation of vector type
+  api=4 type=0 insize=7577 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF ok=0

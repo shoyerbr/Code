@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\New Unity Project 2\Assets\kitten.cs">
+    <Files>
+      <File FileName="Assets\player_movement.cs" Line="85" Column="28" />
+      <File FileName="Assets\ring1.cs" Line="10" Column="56" />
+      <File FileName="Assets\ring2.cs" Line="15" Column="62" />
+      <File FileName="Assets\ring3.cs" Line="15" Column="56" />
+      <File FileName="Assets\ring4.cs" Line="15" Column="56" />
+      <File FileName="Assets\ring5.cs" Line="24" Column="24" />
+      <File FileName="Assets\track_player.cs" Line="22" Column="2" />
+      <File FileName="..\New Unity Project 2\Assets\kitten.cs" Line="46" Column="33" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
